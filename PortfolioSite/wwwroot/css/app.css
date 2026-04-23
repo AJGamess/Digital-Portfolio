@@ -150,8 +150,9 @@ code {
 }
 
 .skill-badge {
-    background: linear-gradient(135deg, #052767, #3a0647);
-    color: #fff;
+    background: rgba(0, 255, 65, 0.08);
+    color: #00ff41;
+    border: 1px solid rgba(0, 255, 65, 0.25);
     padding: 0.3rem 0.75rem;
     border-radius: 999px;
     font-size: 0.8rem;
@@ -192,13 +193,14 @@ code {
 
 .education-entry {
     padding: 0.75rem 1rem;
-    background: #f8f9fa;
-    border-left: 4px solid #3a0647;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-left: 4px solid rgba(0, 255, 65, 0.5);
     border-radius: 4px;
+    color: #cbd5e0;
 }
 
 .skills-grid .skill-group h6 {
-    color: #3a0647;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
@@ -210,9 +212,9 @@ code {
 }
 
 .skill-tag {
-    background: #f0ecf5;
-    color: #3a0647;
-    border: 1px solid #d0c4de;
+    background: rgba(0, 255, 65, 0.08);
+    color: #00ff41;
+    border: 1px solid rgba(0, 255, 65, 0.25);
     padding: 0.2rem 0.6rem;
     border-radius: 6px;
     font-size: 0.85rem;
@@ -221,13 +223,21 @@ code {
 /* Projects */
 .project-card {
     border-radius: 10px;
-    border: 1px solid #e0e0e0;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    color: white;
     transition: transform 0.15s, box-shadow 0.15s;
 }
 
 .project-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 18px rgba(0, 255, 65, 0.12);
+    border-color: rgba(0, 255, 65, 0.4);
+}
+
+.project-card .card-footer {
+    border-top: 1px solid rgba(0, 255, 65, 0.1);
 }
 
 .project-card-header {
@@ -235,8 +245,9 @@ code {
 }
 
 .project-type-badge {
-    background: linear-gradient(135deg, #052767, #3a0647);
-    color: white;
+    background: rgba(0, 255, 65, 0.08);
+    color: #00ff41;
+    border: 1px solid rgba(0, 255, 65, 0.25);
     font-size: 0.75rem;
     padding: 0.2rem 0.6rem;
     border-radius: 999px;
@@ -249,9 +260,9 @@ code {
 }
 
 .project-tag {
-    background: #eef2ff;
-    color: #3730a3;
-    border: 1px solid #c7d2fe;
+    background: rgba(0, 255, 65, 0.08);
+    color: #00ff41;
+    border: 1px solid rgba(0, 255, 65, 0.25);
     padding: 0.15rem 0.55rem;
     border-radius: 6px;
     font-size: 0.8rem;
@@ -305,11 +316,64 @@ code {
         transform: translate(10%, 10%) rotate(20deg);
     }
 }
-.ambient-green h1, .ambient-green h2, .ambient-green h3 {
-    color: #00ff41; /* Classic Terminal Green */
-    text-shadow: 0 0 10px rgba(0, 255, 65, 0.3); /* Subtle glow */
+.ambient-green h1, .ambient-green h2, .ambient-green h3,
+.ambient-green h4, .ambient-green h5, .ambient-green h6 {
+    color: #00ff41;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
 }
 
 .ambient-green p, .ambient-green span {
-    color: #cbd5e0; /* Light grey/white for body text */
+    color: #cbd5e0;
+}
+
+.ambient-green strong {
+    color: #e2e8f0;
+}
+
+.ambient-green label {
+    color: #cbd5e0;
+}
+
+.ambient-green .text-muted {
+    color: #8a9ab5 !important;
+}
+
+/* Dark form inputs */
+.ambient-green .form-control {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 65, 0.25);
+    color: #cbd5e0;
+}
+
+.ambient-green .form-control:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 255, 65, 0.55);
+    color: #fff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 255, 65, 0.15);
+}
+
+.ambient-green .form-control::placeholder {
+    color: #5a6a7a;
+}
+
+/* Contact links */
+.ambient-green .contact-link-item a {
+    color: #00ff41;
+    text-decoration: none;
+}
+
+.ambient-green .contact-link-item a:hover {
+    text-decoration: underline;
+}
+
+/* Outline button on dark bg */
+.ambient-green .btn-outline-primary {
+    color: #00ff41;
+    border-color: rgba(0, 255, 65, 0.5);
+}
+
+.ambient-green .btn-outline-primary:hover {
+    background: rgba(0, 255, 65, 0.15);
+    color: #00ff41;
+    border-color: rgba(0, 255, 65, 0.8);
 }
