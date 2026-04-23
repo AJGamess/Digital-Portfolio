@@ -160,9 +160,10 @@ code {
 
 /* Home – Cards */
 .home-card {
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    transition: transform 0.15s, box-shadow 0.15s;
+    background: rgba(255, 255, 255, 0.05); /* Very transparent */
+    backdrop-filter: blur(10px); /* Blurs the background behind the card */
+    border: 1px solid rgba(0, 255, 65, 0.2); /* Green border */
+    color: white;
 }
 
 .home-card:hover {
@@ -269,4 +270,46 @@ code {
     font-size: 1.2rem;
     width: 1.6rem;
     text-align: center;
+}
+
+/* Update your app.css with this version */
+.ambient-green {
+    /* Keep the black background so the green glow is visible */
+    background-color: #000500;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+    .ambient-green::before {
+        content: "";
+        position: absolute;
+        top: -25%;
+        left: -25%;
+        width: 150%;
+        height: 150%;
+        background: radial-gradient( circle at center, rgba(0, 255, 65, 0.08) 0%, rgba(0, 128, 0, 0.03) 30%, transparent 60% );
+        animation: drift 20s infinite alternate ease-in-out;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+/* movement logic stays the same */
+@keyframes drift {
+    from {
+        transform: translate(-10%, -10%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(10%, 10%) rotate(20deg);
+    }
+}
+.ambient-green h1, .ambient-green h2, .ambient-green h3 {
+    color: #00ff41; /* Classic Terminal Green */
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.3); /* Subtle glow */
+}
+
+.ambient-green p, .ambient-green span {
+    color: #cbd5e0; /* Light grey/white for body text */
 }
