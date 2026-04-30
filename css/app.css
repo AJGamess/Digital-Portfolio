@@ -220,6 +220,69 @@ code {
     font-size: 0.85rem;
 }
 
+/* Project image slider */
+.project-img-slider {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-img-slider .card-img-top {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.55);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background 0.15s;
+}
+
+.slider-btn:hover {
+    background: rgba(0, 255, 65, 0.4);
+}
+
+.slider-btn-prev { left: 8px; }
+.slider-btn-next { right: 8px; }
+
+.slider-dots {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 10;
+}
+
+.slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.slider-dot.active {
+    background: #00ff41;
+}
+
 /* Projects */
 .project-card {
     border-radius: 10px;
