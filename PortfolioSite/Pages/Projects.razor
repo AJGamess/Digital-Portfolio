@@ -9,6 +9,18 @@
 
     <div class="col-md-6">
         <div class="card project-card h-100">
+            <div class="project-img-slider">
+                <img src="@platformImages[platformIndex]" class="card-img-top" alt="Platform Ain't Platforming" />
+                <button class="slider-btn slider-btn-prev" @onclick="() => platformIndex = (platformIndex - 1 + platformImages.Length) % platformImages.Length">&#8249;</button>
+                <button class="slider-btn slider-btn-next" @onclick="() => platformIndex = (platformIndex + 1) % platformImages.Length">&#8250;</button>
+                <div class="slider-dots">
+                    @for (int i = 0; i < platformImages.Length; i++)
+                    {
+                        var idx = i;
+                        <span class="slider-dot @(platformIndex == idx ? "active" : "")" @onclick="() => platformIndex = idx"></span>
+                    }
+                </div>
+            </div>
             <div class="project-card-header">
                 <span class="project-type-badge">Game Jam</span>
             </div>
@@ -34,6 +46,18 @@
 
     <div class="col-md-6">
         <div class="card project-card h-100">
+            <div class="project-img-slider">
+                <img src="@infiniteImages[infiniteIndex]" class="card-img-top" alt="Infinite Station" />
+                <button class="slider-btn slider-btn-prev" @onclick="() => infiniteIndex = (infiniteIndex - 1 + infiniteImages.Length) % infiniteImages.Length">&#8249;</button>
+                <button class="slider-btn slider-btn-next" @onclick="() => infiniteIndex = (infiniteIndex + 1) % infiniteImages.Length">&#8250;</button>
+                <div class="slider-dots">
+                    @for (int i = 0; i < infiniteImages.Length; i++)
+                    {
+                        var idx = i;
+                        <span class="slider-dot @(infiniteIndex == idx ? "active" : "")" @onclick="() => infiniteIndex = idx"></span>
+                    }
+                </div>
+            </div>
             <div class="project-card-header">
                 <span class="project-type-badge">Capstone Project</span>
             </div>
@@ -58,6 +82,18 @@
 
     <div class="col-md-6">
         <div class="card project-card h-100">
+            <div class="project-img-slider">
+                <img src="@pkmImages[pkmIndex]" class="card-img-top" alt="Pokemon Battle Simulator" />
+                <button class="slider-btn slider-btn-prev" @onclick="() => pkmIndex = (pkmIndex - 1 + pkmImages.Length) % pkmImages.Length">&#8249;</button>
+                <button class="slider-btn slider-btn-next" @onclick="() => pkmIndex = (pkmIndex + 1) % pkmImages.Length">&#8250;</button>
+                <div class="slider-dots">
+                    @for (int i = 0; i < pkmImages.Length; i++)
+                    {
+                        var idx = i;
+                        <span class="slider-dot @(pkmIndex == idx ? "active" : "")" @onclick="() => pkmIndex = idx"></span>
+                    }
+                </div>
+            </div>
             <div class="project-card-header">
                 <span class="project-type-badge">Class Project</span>
             </div>
@@ -82,3 +118,24 @@
     </div>
 
 </div>
+
+@code {
+    private int platformIndex = 0;
+    private int infiniteIndex = 0;
+    private int pkmIndex = 0;
+
+    private string[] platformImages = {
+        "/Images/PlatformAintPlatforming%20(1).png",
+        "/Images/PlatformAintPlatforming%20(2).PNG"
+    };
+
+    private string[] infiniteImages = {
+        "/Images/InfiniteStation.PNG",
+        "/Images/InfiniteStation2.PNG"
+    };
+
+    private string[] pkmImages = {
+        "/Images/PKMBattleSim1.PNG",
+        "/Images/PKMBattleSim2.PNG"
+    };
+}
